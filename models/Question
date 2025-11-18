@@ -1,0 +1,70 @@
+class Question{
+    constructor(questionId, category, questionText, choices, answer, difficulty)
+    {
+    this.questionId = questionId;
+    this.category = category;
+    this.questionText = questionText;
+    this.choices = choices;
+    this.answer = answer;
+    this.difficulty = difficulty;
+    
+    }
+
+     // Static method to create question from Firestore data
+  static fromFirestore(doc) {
+    const data = doc.data();
+    return new Question(
+      doc.id,
+      data.category,
+      data.questionText,
+      data.choices,
+      data.answer,
+      data.difficulty
+    );
+  }
+
+  // Convert to plain object for Firestore
+  toFirestore() {
+    return {
+      questionId: this.questionId,
+      category: this.category,
+      questionText: this.questionText,
+      choices: this.choices,
+      answer: this.answer,
+      difficulty: this.difficulty
+    };
+  }
+
+    // Validation method for question data entry
+  validate() {
+    const errors = [];
+    
+    if (!this.category || this.category.trim() === '') {
+      errors.push('Category is required');
+    }
+    
+    if (!this.questionText || this.questionText.trim() === '') {
+      errors.push('Question text is required');
+    }
+    
+    if (!this.choices || this.choices.length !== 4) {
+      errors.push('Exactly 4 options are required');
+    }
+    
+    if (!this.answer || this.answer.trim() === '') {
+      errors.push('Correct answer is required');
+    }
+    
+    if (this.choices && !this.choices.includes(this.answer)) {
+      errors.push('Correct answer must be one of the provided choices');
+    }
+
+    if (!this.difficulty || !['Easy', 'Medium', 'Hard'].includes(this.difficulty)) {
+      errors.push('Difficulty must be one of: easy, medium, hard');
+    }
+    
+    return errors;
+  }
+}
+
+export default Question;
