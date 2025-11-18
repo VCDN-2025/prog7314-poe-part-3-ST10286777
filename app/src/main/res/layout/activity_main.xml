@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient">
+
+    <!-- Network Status Indicator -->
+    <TextView
+        android:id="@+id/tvNetworkStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Online"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Content Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- User Info -->
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@example.com"
+                android:textColor="@android:color/white"
+                android:background="@drawable/black_card_bg"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/trivora_logo" />
+
+            <!-- Offline Play Section -->
+            <LinearLayout
+                android:id="@+id/offlineSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:background="@drawable/black_card_bg"
+                android:padding="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Offline Play"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btnOfflinePlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Play Downloaded Quizzes"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/pink"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDownloadAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Download All Categories for Offline"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/pink"
+                    android:visibility="visible"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvOfflineStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Offline quizzes available: 0"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:padding="4dp" />
+
+
+                <!-- Empty State for Categories -->
+                <TextView
+                    android:id="@+id/emptyState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    android:gravity="center"
+                    android:text="No categories available\nTap to retry"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:padding="32dp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Choose a Category"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Loading Indicator -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoriesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav_bg"
+        android:elevation="8dp"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/pink"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

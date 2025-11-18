@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient">
+
+    <!-- Network Status Indicator -->
+    <TextView
+        android:id="@+id/tvNetworkStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Offline Mode"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Content Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Back Button -->
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Back"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/trivora_logo" />
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Offline Quizzes"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Loading Indicator -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <!-- Offline Categories RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOfflineCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="500dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Empty State -->
+            <TextView
+                android:id="@+id/emptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:gravity="center"
+                android:text="No offline quizzes available\n\nDownload quizzes when online to play offline"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:padding="32dp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

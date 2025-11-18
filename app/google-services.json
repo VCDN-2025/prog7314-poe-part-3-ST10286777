@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "521674034377",
+    "project_id": "trivora-1ff1e",
+    "storage_bucket": "trivora-1ff1e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521674034377:android:0ae71fdbd827c12b7dd118",
+        "android_client_info": {
+          "package_name": "com.arcadia.trivora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521674034377-9uahcdrq86be7jvvaqivjep3496n9poc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arcadia.trivora",
+            "certificate_hash": "d9f2a957dda134febed1680941a518fbd3f180f3"
+          }
+        },
+        {
+          "client_id": "521674034377-nlt0dkuunvoabed9bo52mqetmiqme3qv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVQHkZbYxCuXYP7Wiko8i1WyrLQke6vcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521674034377-nlt0dkuunvoabed9bo52mqetmiqme3qv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
