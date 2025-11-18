@@ -88,16 +88,56 @@ Offline Play
 
 ## 🧰 GitHub & GitHub Actions Usage
 
-### 🗂️ Version Control with GitHub
+### Version Control with GitHub
 GitHub was utilized for:
 - **Source code management** and team collaboration.  
 - **Branching strategy** for development, testing, and production.  
 - **Pull Requests** for code reviews before merging to `main`.
 
-Each feature was developed in its own branch, ensuring clean integration and reducing merge conflicts.
+Each feature was developed in its own branch, ensuring clean integration and reducing merge conflicts. 
 
-### 🤖 Continuous Integration with GitHub Actions
+
+### Continuous Integration with GitHub Actions
 GitHub Actions was configured to:
 - Automatically **build the project** and **run tests** when changes are pushed.  
 - Detect build issues early across environments.  
 - Generate APK builds and upload them as **artifacts** for easy testing.
+
+
+## Prerequisites
+
+Before setting up the project, ensure you have the following installed:
+
+- **Java Development Kit (JDK) 11 or higher**
+- **Android Studio** (latest stable version)
+- **Firebase CLI** (for Firebase management)
+- **Git** (for version control)
+
+## Quick Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd skhaftin-android
+   ```
+
+2. **Open in Android Studio**:
+   - Launch Android Studio
+   - Select "Open an existing project"
+   - Navigate to the cloned directory and select it
+   - Wait for Gradle sync to complete
+
+3. **Firebase Setup**:
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+   - Add an Android app with package name `com.skhaftin`
+   - Download `google-services.json` and place it in `app/` directory
+   - Enable Authentication and Firestore in Firebase Console
+
+4. **Run the app**:
+   - Connect an Android device or start an emulator
+   - Click "Run" in Android Studio or use `./gradlew installDebug`
+
+## Detailed Setup Guide
+
+For comprehensive setup instructions including Firebase CLI installation, emulator setup, and troubleshooting, see [ANDROID_EMULATOR_SETUP.md](ANDROID_EMULATOR_SETUP.md).
+
