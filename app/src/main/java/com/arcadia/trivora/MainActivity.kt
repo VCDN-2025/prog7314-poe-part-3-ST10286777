@@ -35,12 +35,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val languageCode = LocaleHelper.getPersistedLanguage(this)
+        val context = LocaleHelper.setLocale(this, languageCode)
+        resources.updateConfiguration(context.resources.configuration, context.resources.displayMetrics)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
         val database = TrivoraDatabase.getInstance(this)
-        offlineQuizRepository = OfflineQuizRepository(database) // Fixed: removed 'OfflineQuizRepository ='
+        offlineQuizRepository = OfflineQuizRepository(database)
         enableEdgeToEdge()
         setupWindowInsets()
         setupRecyclerView()
@@ -141,18 +145,18 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             // Get count of available offline quizzes
             val availableCount = offlineQuizRepository.getAvailableQuizCount()
-            binding.tvOfflineStatus.text = "Offline quizzes available: $availableCount"
+            binding.tvOfflineStatus.text = getString(R.string.offline_quizzes_available, availableCount)
 
             // Show/hide offline section based on whether we have offline content
             if (availableCount > 0) {
                 binding.offlineSection.visibility = View.VISIBLE
                 binding.btnOfflinePlay.isEnabled = true
-                binding.btnOfflinePlay.text = "Play Downloaded Quizzes"
+                binding.btnOfflinePlay.text = getString(R.string.play_downloaded_quizzes)
             } else {
                 // Still show but disable the button if no content
                 binding.offlineSection.visibility = View.VISIBLE
                 binding.btnOfflinePlay.isEnabled = false
-                binding.btnOfflinePlay.text = "No offline quizzes available"
+                binding.btnOfflinePlay.text = getString(R.string.no_offline_quizzes)
             }
         }
     }
@@ -290,7 +294,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity, "Error: $it", Toast.LENGTH_LONG).show()
                         viewModel.clearError()
                         binding.emptyState.visibility = View.VISIBLE
-                        binding.emptyState.text = "Failed to load categories\nTap to retry"
+                        binding.emptyState.text = "${getString(R.string.error)}\n${getString(R.string.tap_to_retry)}"
                     }
                 }
             }

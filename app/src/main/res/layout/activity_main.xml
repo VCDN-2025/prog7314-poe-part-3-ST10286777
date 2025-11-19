@@ -12,7 +12,7 @@
         android:id="@+id/tvNetworkStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Online"
+        android:text="@string/online"
         android:textColor="@android:color/white"
         android:padding="8dp"
         android:gravity="center"
@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Offline Play"
+                    android:text="@string/offline_play"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -80,7 +80,7 @@
                     android:id="@+id/btnOfflinePlay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Play Downloaded Quizzes"
+                    android:text="@string/play_downloaded_quizzes"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/pink"
                     android:layout_marginBottom="8dp"
@@ -90,7 +90,7 @@
                     android:id="@+id/btnDownloadAll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Download All Categories for Offline"
+                    android:text="@string/download_all_categories"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/pink"
                     android:visibility="visible"
@@ -101,12 +101,11 @@
                     android:id="@+id/tvOfflineStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Offline quizzes available: 0"
+                    android:text="@string/offline_quizzes_available"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:padding="4dp" />
-
 
                 <!-- Empty State for Categories -->
                 <TextView
@@ -115,20 +114,20 @@
                     android:layout_height="wrap_content"
                     android:minHeight="200dp"
                     android:gravity="center"
-                    android:text="No categories available\nTap to retry"
+                    android:text="@string/no_categories_available"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:padding="32dp"
                     android:visibility="gone" />
 
-
             </LinearLayout>
+
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Choose a Category"
+                android:text="@string/choose_category"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -142,12 +141,14 @@
                 android:layout_gravity="center"
                 android:visibility="gone" />
 
+            <!-- Categories RecyclerView with dynamic height -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categoriesRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:maxHeight="2000dp"
+                android:layout_marginBottom="16dp" />
 
         </LinearLayout>
     </ScrollView>

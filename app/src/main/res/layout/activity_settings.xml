@@ -10,20 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="← Back"
+            android:text="@string/back"
             android:textColor="@android:color/white"
             android:backgroundTint="@android:color/transparent"
             android:layout_marginBottom="12dp"
             android:layout_marginTop="12dp"/>
+
         <!-- Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/settings_title"
             android:textColor="@android:color/white"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -47,7 +49,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sound"
+                    android:text="@string/sound_settings"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -64,15 +66,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Sound Effects"
+                        android:text="@string/sound_effects"
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
                     <Switch
                         android:id="@+id/soundSwitch"
                         android:layout_width="98dp"
-                        android:layout_height="48dp"
-                        />
+                        android:layout_height="48dp" />
                 </LinearLayout>
 
                 <!-- Vibration Toggle -->
@@ -87,7 +88,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Vibration"
+                        android:text="@string/vibration"
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
@@ -96,7 +97,6 @@
                         android:layout_width="98dp"
                         android:layout_height="48dp" />
                 </LinearLayout>
-
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -118,7 +118,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Security"
+                    android:text="@string/security"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -136,7 +136,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Biometric Login"
+                        android:text="@string/biometric_login"
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
@@ -151,13 +151,14 @@
                     android:id="@+id/biometricStatusText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Check biometric status..."
+                    android:text="@string/check_biometric_status"
                     android:textColor="#666666"
                     android:textSize="12sp"
                     android:layout_marginTop="4dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -174,7 +175,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Difficulty of Questions"
+                    android:text="@string/difficulty_settings"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -191,7 +192,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Easy"
+                        android:text="@string/easy"
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
@@ -212,7 +213,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Medium"
+                        android:text="@string/medium"
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
@@ -234,7 +235,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Hard"
+                        android:text="@string/hard"
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
@@ -245,17 +246,58 @@
                 </LinearLayout>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language_settings"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Current Language Display -->
+                <TextView
+                    android:id="@+id/currentLanguageText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_language"
+                    android:textColor="#666666"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Change Language Button -->
+                <Button
+                    android:id="@+id/languageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_language"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#2196F3"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Settings"
+            android:text="@string/save_settings"
             android:textColor="@android:color/white"
             android:backgroundTint="#4CAF50"
             android:layout_marginTop="16dp"
@@ -263,5 +305,4 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
 </ScrollView>

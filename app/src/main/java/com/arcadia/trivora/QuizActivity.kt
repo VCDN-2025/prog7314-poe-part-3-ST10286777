@@ -25,6 +25,10 @@ class QuizActivity : AppCompatActivity() {
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val languageCode = LocaleHelper.getPersistedLanguage(this)
+        val context = LocaleHelper.setLocale(this, languageCode)
+        resources.updateConfiguration(context.resources.configuration, context.resources.displayMetrics)
+
         // Determine quiz mode from intent
         quizMode = intent.getStringExtra("QUIZ_MODE") ?: "CATEGORY"
 

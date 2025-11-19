@@ -7,12 +7,11 @@
     android:background="@drawable/bg_gradient"
     android:padding="16dp">
 
-
     <TextView
         android:id="@+id/categoryTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Category Quiz"
+        android:text="@string/quiz"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -31,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Question 1/10"
+            android:text="@string/question_progress"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
@@ -39,7 +38,7 @@
             android:id="@+id/scoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score: 0"
+            android:text="@string/score"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -75,7 +74,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
             </RadioGroup>
 
         </LinearLayout>
@@ -95,7 +93,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp" />
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Submit Answer"
+            android:text="@string/submit"
             android:textColor="@android:color/white"
             android:backgroundTint="#4CAF50"
             android:layout_marginEnd="8dp"
@@ -117,7 +114,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Next Question"
+            android:text="@string/next"
             android:textColor="@android:color/white"
             android:backgroundTint="#2196F3"
             android:layout_marginStart="8dp"
@@ -136,7 +133,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Failed to load questions"
+        android:text="@string/error"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:padding="32dp"
@@ -148,7 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:padding="8dp"
-        android:text="Offline Mode"
+        android:text="@string/offline"
         android:textColor="@android:color/white"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -175,6 +172,6 @@
         android:visibility="gone"
         android:clickable="true"
         android:focusable="true"
-        android:text="Failed to save results. Tap to dismiss." />
+        android:text="@string/failed_to_save" />
 
 </LinearLayout>
