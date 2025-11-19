@@ -20,7 +20,7 @@ This README serves as a **comprehensive project report**, detailing the purpose,
 
 ## 🎬 YouTube Demonstration
 
-▶️ [Watch the Demo Video](https://youtu.be/kKGOq5szSEg)
+▶️ [Watch the Demo Video](https://youtu.be/_2akrI_bWnc)
 
 ---
 
@@ -60,7 +60,7 @@ It combines **education, competition, and personalization** by allowing users to
 
 ### 4. Trivia Gameplay
 - Multiple categories (History, Sports, Movies, Science).    
-- Image-based questions (planned).  
+- Image-based questions.  
 - Randomized questions and one-question “speed quiz”.  
 - Hint system with coins.
 
